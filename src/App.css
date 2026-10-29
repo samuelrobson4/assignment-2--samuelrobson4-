@@ -1,1 +1,302 @@
-/* Paste your Assignment 1 styles.css here. Keep the icons in src/assets/ so url(assets/...) paths keep working. */
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    color: #000000;
+    margin: 0;
+}
+
+/* ========== HEADER STYLES ========== */
+
+.site-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #dc4c3e;
+    color: #ffffff;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.site-header .header-icon {
+    height: 20px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.quick-find {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0.4rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+}
+
+.quick-find input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+    color: #ffffff;
+    background: transparent;
+}
+
+.quick-find input::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.quick-find .search-icon {
+    opacity: 0.9;
+}
+
+.header-counter {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.task-counter {
+    font-size: 14px;
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+/* ========== NAVIGATION STYLES ========== */
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: #fefbf2;
+    padding-top: 1.5rem;
+}
+
+.sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-list a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem 0.6rem 2rem;
+    text-decoration: none;
+    color: #000000;
+    transition: background-color 0.15s ease;
+}
+
+.sidebar-list a:hover {
+    background-color: rgba(255, 255, 255, 0.55);
+}
+
+.sidebar-list img {
+    height: 24px;
+    width: auto;
+}
+
+.nav-count {
+    font-size: 12px;
+    color: #7e7d79;
+    margin-left: 0.35rem;
+}
+
+.sidebar-list li:first-child a {
+    padding-top: 0;
+}
+
+/* ========== LAYOUT ========== */
+
+.page-layout {
+    display: flex;
+    align-items: stretch;
+    min-height: calc(100vh - 52px);
+}
+
+.main-content {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 1.5rem 2rem;
+}
+
+/* ========== MAIN CONTENT STYLES ========== */
+
+.main-content h1 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+    color: #000000;
+}
+
+.task-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.task-item:last-child {
+    border-bottom: none;
+}
+
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cccccc;
+    border-radius: 50%;
+    margin: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.task-checkbox:checked {
+    border-color: #dc4c3e;
+    background-color: #dc4c3e;
+    box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+.task-item label,
+.task-text {
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    flex: 1;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    opacity: 0.55;
+}
+
+.task-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0 0 1rem;
+    font-size: 14px;
+}
+
+.task-filters button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: 14px;
+    color: #7e7d79;
+    cursor: pointer;
+}
+
+.task-filters button:hover {
+    color: #000000;
+}
+
+.task-filters button.active {
+    color: #dc4c3e;
+    font-weight: 700;
+}
+
+.task-filters .filter-sep {
+    color: #cccccc;
+    user-select: none;
+}
+
+.task-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    max-width: 480px;
+}
+
+.task-form input {
+    flex: 1;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.task-form input:focus {
+    outline: 2px solid rgba(220, 76, 62, 0.35);
+    border-color: #dc4c3e;
+}
+
+.task-form button {
+    font-family: inherit;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #dc4c3e;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.task-form button:hover {
+    background-color: #c44337;
+}
+
+.task-form button:active {
+    transform: scale(0.98);
+}
+
+.delete-task {
+    background: none;
+    border: none;
+    color: #7e7d79;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.25rem;
+    flex-shrink: 0;
+}
+
+.delete-task:hover {
+    color: #dc4c3e;
+}
+
+.empty-state {
+    font-size: 14px;
+    color: #7e7d79;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+}
